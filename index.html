@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Student Registration Details</h1>
+    <p>Please complete the form below. Required fields are marked with an asterisk (*).</p>
+
+    <form id="registrationForm" novalidate>
+        
+        <!-- Success Message Container (GREEN) -->
+        <div id="success-box">
+            <strong>Success!</strong> Your registration has been submitted.
+        </div>
+
+        <!-- Error Message Container (RED - ADDED THIS) -->
+        <div id="error-box">
+            <strong>Registration Failed!</strong> Please check the fields highlighted in red below.
+        </div>
+
+        <h2>Personal Data</h2>
+
+        <dl>
+            <!-- Full Name -->
+            <dt><label for="fullName">Full Name:*</label></dt>
+            <dd>
+                <input type="text" id="fullName" name="fullName" placeholder="ex. Juan Dela Cruz">
+                <small class="error-message" id="error-fullName">Full Name is required.</small>
+            </dd>
+
+            <!-- Contact Number -->
+            <dt><label for="contactNumber">Contact Number:*</label></dt>
+            <dd>
+                <input type="tel" id="contactNumber" name="contactNumber" placeholder="ex. 09123456789" maxlength="11">
+                <small class="error-message" id="error-contactNumber">Please enter a valid 11-digit number.</small>
+            </dd>
+
+            <!-- Email -->
+            <dt><label for="email">Email Address:*</label></dt>
+            <dd>
+                <input type="email" id="email" name="email" placeholder="ex. juan@example.com">
+                <small class="error-message" id="error-email">Please enter a valid email address.</small>
+            </dd>
+
+            <!-- Address (Single Textarea) -->
+            <dt><label for="address">Address:*</label></dt>
+            <dd>
+                <textarea id="address" name="address" rows="3" placeholder="House No., Street, City, Province"></textarea>
+                <!-- Added Error Message for Address -->
+                <small class="error-message" id="error-address">Address is required.</small>
+            </dd>
+
+            <!-- Gender -->
+            <dt>Gender:*</dt>
+            <dd id="gender-group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+                <small class="error-message" id="error-gender">Please select a gender.</small>
+            </dd>
+        </dl>
+
+        <hr>
+
+        <h2>Academic Details</h2>
+
+        <dl>
+            <!-- Academic Program -->
+            <dt><label for="academicInfo">Academic Program/Course:*</label></dt>
+            <dd>
+                <input type="text" id="academicInfo" name="academicInfo" placeholder="ex. BS Information Technology">
+                <small class="error-message" id="error-academicInfo">Program/Course is required.</small>
+            </dd>
+
+            <!-- Year Level -->
+            <dt><label for="year">Academic Year:*</label></dt>
+            <dd>
+                <select id="year" name="year">
+                    <option value="" disabled selected>Select Your Current Year</option>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                </select>
+                <small class="error-message" id="error-year">Please select your year level.</small>
+            </dd>
+        </dl>
+
+        <hr>
+
+        <p>
+            <input type="submit" value="Final Submit">
+            <button type="button" class="reset-btn" onclick="resetForm()">Clear All Fields</button>
+        </p>
+
+    </form>
+
+    <!-- Link to external JS file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
